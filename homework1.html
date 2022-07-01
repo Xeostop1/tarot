@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 호버</title>
+    <style>
+        *{
+            
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid black; */
+        }
+        #wrap{
+            width: 500px;
+            margin: 0 auto;
+            background-color:greenyellow;
+        }
+        #wrap::after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+
+       .sub> li>a{
+            display: block;
+            /* 클리어보스는 블락에서만 사용할수있음! 그래서 이걸쓰는것 */
+            content: '';
+            clear: both;
+        }
+        .menu ul {
+            list-style: none;
+            /* 안으로 들어가려면 ul,li모두 초기화 하기 */
+            margin: 0;
+            padding: 0;
+        }
+        li a{
+            display: block;
+            text-align: center;
+            /* 밑줄없에기 */
+            text-decoration: none;
+
+            color: white;
+            background-color: black;
+        }
+        .sub{
+            /* opacity: 0;   */
+            visibility: hidden;
+        }
+        .main_ul > li:hover .sub{
+            /* opacity: 1; */
+            visibility: visible;
+        }
+        
+        .menu li{
+            /* 전체를 주는게 아니라! 올라가고 싶은 애들만 인라인 블럭으로
+            줄 세우기 */
+            margin: 0 auto;
+            width: 100px;
+            float: left;
+        }
+        .top_a{
+            background-color: red;
+            
+        }
+     
+    </style>
+
+
+</head>
+<body>
+    <div id="wrap">
+        <br><p>각메뉴는 a태그로 이루어져 있습니다</p><br>
+        <div class="menu">
+            <ul class="main_ul"> 
+                <li class="menu_li"><a class="top_a" href="#">메뉴1</a>
+                    <ul class="sub">
+                        <li><a href="#"> 로그인</a></li>
+                        <li><a href="#"> 로그인</a></li>
+                        <li><a href="#"> 로그인</a></li>
+                        <li><a href="#"> 로그인</a></li>
+                    </ul>
+                <li class="menu_li"><a class="top_a" href="#">메뉴2</a>
+                    <ul class="sub">
+                        <li><a href="#"> 로그인</a></li>
+                        <li><a href="#"> 로그인</a></li>
+                        <li><a href="#"> 로그인</a></li>
+                    </ul>
+                </li>    
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

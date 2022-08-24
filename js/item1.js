@@ -10,14 +10,18 @@ window.addEventListener("load", function () {
 
    //랜덤값 배열에 넣기
     
-   
-
-    function appenCard(){
+   function random(){
         const cardNo=11; 
         for (let i = 0; i < cardNo-1; i++) {
             let randomNum=Math.floor(Math.random()*cardNo)+1;    
             numArr.push(randomNum);
         }
+        return numArr;
+   }
+   
+
+    function appenCard(){
+        random(num);
         let cardItem=document.querySelector(".cardItem"); //붙일곳 
         cardItem.style.visibility="visible" //visibility까지 써주기
         let div=document.createElement("div");
